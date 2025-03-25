@@ -25,7 +25,7 @@
 The Breast Cancer Genomics Research Institute has been analyzing gene expression data since 2010 to identify patterns in cancer progression and patient demographics. The dataset includes clinical records of **693 breast cancer patients**, focusing on variables such as age at diagnosis, treatment history, and genetic markers.  
 
 **Key Metrics**:  
-- **Dataset Size**: 1,904 patient records.  
+- **Dataset Size**: 693 patient records.  
 - **Timeframe**: Data collected from 2015–2023.  
 - **Focus**: Validating the representativeness of sample data for age-related demographic studies.  
 
