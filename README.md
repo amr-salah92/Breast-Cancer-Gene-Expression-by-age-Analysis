@@ -46,14 +46,14 @@ The Breast Cancer Genomics Research Institute has been analyzing gene expression
   - `age_at_diagnosis` (float): Age in years at diagnosis.  
 - **Data Quality**:  
   - No missing values in the analyzed columns.  
-  - Population mean age: **61.09 years** (σ = 12.98).  
-  - Sample mean age: **58.72 years** (σ = 13.91).  
+  - Population mean age: **61.09 years** (σ = 12.9787).  
+  - Sample mean age: **61.7 years** (σ = 15.33).  
 
 ---
 
 ## 5. Executive Summary  
 **Key Findings**:  
-1. **No Statistical Difference**: The sample mean age (58.72) aligns with the population mean (61.09) based on z-score analysis.  
+1. **No Statistical Difference**: The sample mean age (61.7) aligns with the population mean (61.09) based on z-score analysis.  
 2. **Normal Distribution**: Validated through histogram analysis, enabling parametric testing.  
 3. **Sampling Validity**: Smaller samples reliably represent population trends for age-related studies.  
 
@@ -65,7 +65,7 @@ The Breast Cancer Genomics Research Institute has been analyzing gene expression
 - **p-value**: **0.47918** (>0.05), failing to reject the null hypothesis.  
 
 ### **Category 2: Distribution Analysis**  
-- **Population Skew**: 22.15 % of patients in the sample diagnosed before age 51.  
+- **Population Skew**: 22.15 % of patients in the sample diagnosed before age 50.  
 - **Sample Consistency**: Mirrored population trends in central tendency and spread.  
 
 ![age_at_diagnosis_histogram](https://github.com/user-attachments/assets/d0ff9902-40af-4073-93b7-143375af7c45)
