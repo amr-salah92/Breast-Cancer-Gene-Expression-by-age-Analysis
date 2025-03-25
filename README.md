@@ -68,6 +68,8 @@ The Breast Cancer Genomics Research Institute has been analyzing gene expression
 - **Population Skew**: Right-skewed distribution, with 25% of patients diagnosed before age 51.  
 - **Sample Consistency**: Mirrored population trends in central tendency and spread.  
 
+![age_at_diagnosis_histogram](https://github.com/user-attachments/assets/d0ff9902-40af-4073-93b7-143375af7c45)
+
 ---
 
 ## 7. Recommendations  
