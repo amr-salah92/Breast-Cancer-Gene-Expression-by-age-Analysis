@@ -22,7 +22,7 @@
 ---
 
 ## 2. Project Background  
-The Breast Cancer Genomics Research Institute has been analyzing gene expression data since 2010 to identify patterns in cancer progression and patient demographics. The dataset includes clinical records of **1,904 breast cancer patients**, focusing on variables such as age at diagnosis, treatment history, and genetic markers.  
+The Breast Cancer Genomics Research Institute has been analyzing gene expression data since 2010 to identify patterns in cancer progression and patient demographics. The dataset includes clinical records of **693 breast cancer patients**, focusing on variables such as age at diagnosis, treatment history, and genetic markers.  
 
 **Key Metrics**:  
 - **Dataset Size**: 1,904 patient records.  
@@ -61,11 +61,11 @@ The Breast Cancer Genomics Research Institute has been analyzing gene expression
 
 ## 6. Insights Deep Dive  
 ### **Category 1: Hypothesis Testing**  
-- **Z-Score**: **-0.18** (within ±1.96 critical range), indicating no significant difference.  
-- **p-value**: **0.57** (>0.05), failing to reject the null hypothesis.  
+- **Z-Score**: **0.05218** (within ±1.96 critical range), indicating no significant difference.  
+- **p-value**: **0.47918** (>0.05), failing to reject the null hypothesis.  
 
 ### **Category 2: Distribution Analysis**  
-- **Population Skew**: Right-skewed distribution, with 25% of patients diagnosed before age 51.  
+- **Population Skew**: 22.15 % of patients in the sample diagnosed before age 51.  
 - **Sample Consistency**: Mirrored population trends in central tendency and spread.  
 
 ![age_at_diagnosis_histogram](https://github.com/user-attachments/assets/d0ff9902-40af-4073-93b7-143375af7c45)
@@ -74,14 +74,14 @@ The Breast Cancer Genomics Research Institute has been analyzing gene expression
 
 ## 7. Recommendations  
 1. **Adopt Random Sampling**: Continue using random sampling for demographic studies to reduce costs.  
-2. **Subgroup Analysis**: Investigate patients under 50 (19.77% of the sample) for early intervention programs.  
+2. **Subgroup Analysis**: Investigate patients under 50 (22.15 % of the sample) for early intervention programs.  
 3. **Expand Data Collection**: Integrate genetic markers to enhance correlation studies with age.  
 
 ---
 
 ## 8. Technical Details  
 **Tools**:  
-- **Python**: `pandas` (data manipulation), `scipy.stats` (z-test), `matplotlib` (visualization).  
+- **Python**: `pandas` (data manipulation), `scipy.stats` (norm), `matplotlib` (visualization).  
 - **Jupyter Notebook**: Interactive analysis and reproducibility.  
 
 ---
