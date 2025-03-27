@@ -1,93 +1,131 @@
-# Breast Cancer Gene Expression Analysis Report: Identifying Age at Diagnosis Trends  
+# Breast Cancer Gene Expression Analysis Report: Identifying Age at Diagnosis Trends
 
 ---
 
-## Table of Contents  
-1. [Project Name](#1-project-name)  
-2. [Project Background](#2-project-background)  
-3. [Project Goals](#3-project-goals)  
-4. [Data Structure & Initial Checks](#4-data-structure--initial-checks)  
-5. [Executive Summary](#5-executive-summary)  
-6. [Insights Deep Dive](#6-insights-deep-dive)  
-7. [Recommendations](#7-recommendations)  
-8. [Technical Details](#8-technical-details)  
-9. [Assumptions and Caveats](#9-assumptions-and-caveats)  
+## Table of Contents
+
+1. [Project Name](#1-project-name)
+2. [Project Background](#2-project-background)
+3. [Project Goals](#3-project-goals)
+4. [Data Structure & Initial Checks](#4-data-structure--initial-checks)
+5. [Executive Summary](#5-executive-summary)
+6. [Insights Deep Dive](#6-insights-deep-dive)
+7. [Recommendations](#7-recommendations)
+8. [Technical Details](#8-technical-details)
+9. [Assumptions and Caveats](#9-assumptions-and-caveats)
 
 ---
 
-## 1. Project Name  
-**Company**: Breast Cancer Genomics Research Institute  
-**Analysis**: Statistical Comparison of Population vs. Sample Mean Age at Diagnosis Using Z-Score  
+## 1. Project Name
+
+**Company**: Breast Cancer Genomics Research Institute\
+**Analysis**: Association Between Cancer Type and Cellularity & Age at Diagnosis Trends
 
 ---
 
-## 2. Project Background  
-The Breast Cancer Genomics Research Institute has been analyzing gene expression data since 2010 to identify patterns in cancer progression and patient demographics. The dataset includes clinical records of **693 breast cancer patients**, focusing on variables such as age at diagnosis, treatment history, and genetic markers.  
+## 2. Project Background
 
-**Key Metrics**:  
-- **Dataset Size**: 693 patient records.  
-- **Timeframe**: Data collected from 2015–2023.  
-- **Focus**: Validating the representativeness of sample data for age-related demographic studies.  
+The Breast Cancer Genomics Research Institute is conducting a study to explore associations between cancer type and cellularity, as well as trends in age at diagnosis. The dataset consists of patient records, including demographic and clinical variables. The goal is to validate whether sample data accurately represents the broader population.
 
----
+**Key Metrics**:
 
-## 3. Project Goals  
-**Objective**: Determine if a randomly sampled subset of 50 patients’ mean age at diagnosis differs significantly from the population mean.  
-**Business Impact**:  
-- Ensure sampling accuracy for cost-effective clinical research.  
-- Support early detection strategies by confirming age distribution trends.  
+- **Dataset Source**: Breast Cancer Gene Expression dataset
 
----
+- **Variables of Interest**: Cancer type, cellularity, age at diagnosis
 
-## 4. Data Structure & Initial Checks  
-**Dataset**: `Breast Cancer Gene Expression.csv`  
-- **Columns Analyzed**:  
-  - `patient_id` (integer): Unique patient identifier.  
-  - `age_at_diagnosis` (float): Age in years at diagnosis.  
-- **Data Quality**:  
-  - No missing values in the analyzed columns.  
-  - Population mean age: **61.09 years** (σ = 12.9787).  
-  - Sample mean age: **61.7 years** (σ = 15.33).  
+- **Dataset Size**: 693 patient records.
+
+- **Timeframe**: Data collected from 2015–2023.
+
+- **Focus**: Validating the representativeness of sample data for age-related demographic studies.
 
 ---
 
-## 5. Executive Summary  
-**Key Findings**:  
-1. **No Statistical Difference**: The sample mean age (61.7) aligns with the population mean (61.09) based on z-score analysis.  
-2. **Normal Distribution**: Validated through histogram analysis, enabling parametric testing.  
-3. **Sampling Validity**: Smaller samples reliably represent population trends for age-related studies.  
+## 3. Project Goals
+
+**Objective**:
+
+1. Determine if there is a significant association between cancer type and cellularity.
+2. Assess whether the sample mean age at diagnosis significantly differs from the population mean.
+
+**Business Impact**:
+
+- Ensure valid sampling for clinical studies.
+- Improve early detection strategies by understanding age-related patterns.
 
 ---
 
-## 6. Insights Deep Dive  
-### **Category 1: Hypothesis Testing**  
-- **Z-Score**: **0.05218** (within ±1.96 critical range), indicating no significant difference.  
-- **p-value**: **0.47918** (>0.05), failing to reject the null hypothesis.  
+## 4. Data Structure & Initial Checks
 
-### **Category 2: Distribution Analysis**  
-- **Population Skew**: 22.15 % of patients in the sample diagnosed before age 50.  
-- **Sample Consistency**: Mirrored population trends in central tendency and spread.  
+**Dataset**: `Breast Cancer Gene Expression.csv`
 
-![age_at_diagnosis_histogram](https://github.com/user-attachments/assets/d0ff9902-40af-4073-93b7-143375af7c45)
-
----
-
-## 7. Recommendations  
-1. **Adopt Random Sampling**: Continue using random sampling for demographic studies to reduce costs.  
-2. **Subgroup Analysis**: Investigate patients under 50 (22.15 % of the sample) for early intervention programs.  
-3. **Expand Data Collection**: Integrate genetic markers to enhance correlation studies with age.  
+- **Columns Analyzed**:
+  - `cancer_type_detailed`: Categorical variable indicating cancer subtype.
+  - `cellularity`: Categorical variable indicating tumor cellularity.
+  - `age_at_diagnosis`: Numerical variable representing patient age at diagnosis.
+  - `patient_id` (integer): Unique patient identifier.
+- **Data Quality**:
+  - Population mean age: **61.09 years** (σ = 12.9787).
+  - Sample mean age: **61.7 years** (σ = 15.33).
+- **Data Cleaning**:
+  - Missing values in `cancer_type_detailed` and `cellularity` were removed.
+  - Summary statistics and distributions analyzed.
 
 ---
 
-## 8. Technical Details  
-**Tools**:  
-- **Python**: `pandas` (data manipulation), `scipy.stats` (norm), `matplotlib` (visualization).  
-- **Jupyter Notebook**: Interactive analysis and reproducibility.  
+## 5. Executive Summary
+
+**Key Findings**:
+
+1. **Cancer Type and Cellularity Association**: Statistical testing suggests an association between the two variables.
+2. **Age at Diagnosis**: No significant difference was found between sample and population mean age at diagnosis.
+3. **Young Patient Representation**: Approximately 22.15% of patients were diagnosed below the age of 50.
 
 ---
 
-## 9. Assumptions and Caveats  
-1. **Normality Assumption**: Population age distribution validated as approximately normal.  
-2. **Sampling Bias**: Potential regional/selection biases were not explicitly addressed.  
-3. **Data Limitations**: Excluded records with missing `cellularity` values may introduce minor skew.  
- 
+## 6. Insights Deep Dive
+
+### **Category 1: Cancer Type and Cellularity Association**
+
+- **Chi-Square Test Results**:
+  - **p-value**: `< 0.05`
+  - **Conclusion**: Reject the null hypothesis, indicating a statistical association between cancer type and cellularity.
+
+### **Category 2: Age at Diagnosis Trends**
+
+- **Z-Test Results**:
+  - **p-value**: `> 0.05`
+  - **Conclusion**: No significant difference between sample and population mean age at diagnosis.
+  - **Young Patients (<50 years)**: Represent 22.15% of the sample.
+  - **Sample Consistency**: Mirrored population trends in central tendency and spread.  
+
+---
+
+## 7. Recommendations
+
+1. **Further Subgroup Analysis**: Explore characteristics of younger patients for potential early intervention strategies.
+2. **Expand Data Collection**: Gather additional data on genetic markers to refine insights.
+3. **Validate Findings with Larger Samples**: Conduct additional studies to ensure findings generalize across broader demographics.
+
+---
+
+## 8. Technical Details
+
+**Tools Used**:
+
+- **Python Libraries**: `pandas`, `numpy`, `matplotlib`, `statsmodels`, `scipy.stats`, `pingouin`
+- **Statistical Tests**:
+  - Chi-Square Test for categorical associations
+  - Z-Test for mean comparisons
+
+---
+
+## 9. Assumptions and Caveats
+
+1. **Normality Assumption**: The age distribution was assumed to be approximately normal.
+2. **Sampling Bias**: Selection biases may exist based on the dataset's regional and institutional sources.
+3. **Data Exclusions**: Patients with missing values for key variables were removed, which could introduce minor bias.
+
+
+
+
