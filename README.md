@@ -96,7 +96,7 @@ The Breast Cancer Genomics Research Institute is conducting a study to explore a
 - **Z-Test Results**:
   - **p-value**: `> 0.05`
   - **Conclusion**: No significant difference between sample and population mean age at diagnosis.
-  - **Young Patients (<50 years)**: Represent 22.15% of the sample.
+  - **Young Patients (<50 years)**: Represent 10% of the sample.
   - **Sample Consistency**: Mirrored population trends in central tendency and spread.  
 
 ---
